@@ -1,0 +1,15 @@
+<p>
+  <strong>Title: </strong>
+  <%= @instapost.title %>
+</p>
+
+<p>
+  <strong>By: </strong>
+  <%= @instapost.author_name %>
+</p>
+<p>
+  <strong>Photo Address: </strong>
+  <%= @instapost.photo_url %>
+</p>
+<%= link_to 'Edit', edit_instapost_path(@instapost) %>
+<%= link_to 'Back', root_path %>

@@ -1,0 +1,28 @@
+<h1>INSTAGRAM</h1>
+
+<h3>Listing Instagram Posts</h3>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Author Name</th>
+    <th>Photo Address</th>
+    <th></th>
+  </tr>
+
+  <% @instaposts.each do |instapost| %>
+    <tr>
+      <td><%= instapost.title %></td>
+      <td><%= instapost.author_name %></td>
+      <td><%= instapost.photo_url %></td>
+      <td><%= link_to 'Show', instapost_path(instapost) %></td>
+      <td><%= link_to 'Edit', edit_instapost_path(instapost) %></td>
+      <td><%= link_to 'Destroy', instapost_path(instapost),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></td>
+
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'New Post?', new_instapost_path %>
